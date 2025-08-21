@@ -15,7 +15,15 @@ function TechDesktop() {
   };
 
   return (
-    <div className="relative bg-gray-900 h-full min-h-screen">
+    <div
+      className="relative h-full min-h-screen"
+      style={{
+        backgroundImage: "url('/back.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
       {/* Bottom dock */}
       <Dock onClick={toggleWindow} />
 

@@ -4,7 +4,7 @@ import TechDesktop from './components/TechDesktop';
 import CreativeLayout from './components/CreativeLayout';
 
 function App() {
-  const [mode, setMode] = useState('Tech'); // default mode is Tech
+  const [mode, setMode] = useState('Techie'); // default mode is Techie
 
   return (
     // Wrap in a dark background
@@ -12,7 +12,7 @@ function App() {
       {/* Always show header with toggle */}
       <Header mode={mode} setMode={setMode} />
       {/* Switch between Tech and Creative layouts */}
-      {mode === 'Tech' ? <TechDesktop /> : <CreativeLayout />}
+      {mode === 'Techie' ? <TechDesktop /> : <CreativeLayout />}
     </div>
   );
 }
