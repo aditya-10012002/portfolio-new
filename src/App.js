@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './components/Header';
+import TechDesktop from './components/TechDesktop';
+import CreativeLayout from './components/CreativeLayout';
 
 function App() {
+  const [mode, setMode] = useState('Tech'); // default mode is Tech
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // Wrap in a dark background
+    <div className="min-h-screen bg-gray-900">
+      {/* Always show header with toggle */}
+      <Header mode={mode} setMode={setMode} />
+      {/* Switch between Tech and Creative layouts */}
+      {mode === 'Tech' ? <TechDesktop /> : <CreativeLayout />}
     </div>
   );
 }
