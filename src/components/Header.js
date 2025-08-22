@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
-import { socialLinks, socialIcons } from '../data/config';
+import { socialLinks, socialIcons, resumeLink } from '../data/config';
 
 function Header({ mode, setMode }) {
   // Toggle between 'Techie' and 'Creative' modes
@@ -120,7 +120,7 @@ const formatDateTime = (dt) => {
         {panelOpen && (
           <div
             ref={panelRef}
-            className="absolute right-0 mt-3 w-[420px] bg-[#181818] rounded-xl shadow-2xl z-50 border border-gray-800"
+            className="absolute right-0 mt-11 w-[420px] bg-[#181818] rounded-xl shadow-2xl z-50 border border-gray-800"
             style={{
               background: 'linear-gradient(135deg, #181818 80%, #e95420 100%)',
               color: '#fff',
@@ -128,28 +128,32 @@ const formatDateTime = (dt) => {
               padding: '0.5rem 0',
             }}
           >
-            {/* Top row: battery and github */}
-            <div className="flex items-center justify-between px-5 pt-4 pb-2">
+            {/* Top row: Ubuntu generic icons */}
+            <div className="flex items-center justify-between px-5 pt-2 pb-2">
               <div className="flex items-center space-x-2">
-                {/* GitHub Icon */}
-                <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
-                  <path fill="#fff" d="M12 2C6.48 2 2 6.58 2 12.26c0 4.48 2.87 8.28 6.84 9.63.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.38-2.03 1.02-2.75-.1-.26-.44-1.3.1-2.7 0 0 .83-.27 2.75 1.03A9.36 9.36 0 0 1 12 6.84c.84.004 1.68.11 2.47.32 1.92-1.3 2.75-1.03 2.75-1.03.54 1.4.2 2.44.1 2.7.64.72 1.02 1.63 1.02 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .26.18.57.69.47A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/>
+                {/* Ubuntu logo icon */}
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" fill="#e95420"/>
+                  <circle cx="12" cy="12" r="4" fill="#fff"/>
+                  <circle cx="19" cy="12" r="1.5" fill="#fff"/>
+                  <circle cx="6.5" cy="7.5" r="1.5" fill="#fff"/>
+                  <circle cx="6.5" cy="16.5" r="1.5" fill="#fff"/>
                 </svg>
-                <span className="text-xs font-bold text-gray-200">GitHub</span>
+                <span className="text-xs font-bold text-gray-200">Get To Know Me</span>
               </div>
               <div className="flex items-center space-x-2">
-                {/* LinkedIn Icon */}
+                {/* Settings/gear icon */}
                 <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
-                  <rect width="22" height="22" rx="4" fill="#e95420"/>
-                  <path fill="#fff" d="M7.5 9.5h2v7h-2v-7zm1-2a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm3 2h1.9v1h.03c.26-.5.9-1.03 1.85-1.03 2 0 2.37 1.32 2.37 3.04v4h-2v-3.54c0-.84-.02-1.92-1.17-1.92-1.17 0-1.35.91-1.35 1.85v3.61h-2v-7z"/>
+                  <circle cx="12" cy="12" r="10" fill="#232323"/>
+                  <path fill="#e95420" d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7Zm7.43-2.06-1.36-.2a5.97 5.97 0 0 0-.48-1.16l.8-1.13a.5.5 0 0 0-.06-.64l-1.13-1.13a.5.5 0 0 0-.64-.06l-1.13.8c-.37-.2-.76-.36-1.16-.48l-.2-1.36A.5.5 0 0 0 13 7h-2a.5.5 0 0 0-.5.43l-.2 1.36c-.4.12-.79.28-1.16.48l-1.13-.8a.5.5 0 0 0-.64.06l-1.13 1.13a.5.5 0 0 0-.06.64l.8 1.13c-.2.37-.36.76-.48 1.16l-1.36.2A.5.5 0 0 0 5 11v2c0 .25.18.46.43.5l1.36.2c.12.4.28.79.48 1.16l-.8 1.13a.5.5 0 0 0 .06.64l1.13 1.13c.18.18.46.2.64.06l1.13-.8c.37.2.76.36 1.16.48l.2 1.36c.04.25.25.43.5.43h2c.25 0 .46-.18.5-.43l.2-1.36c.4-.12.79-.28 1.16-.48l1.13.8c.18.14.46.12.64-.06l1.13-1.13a.5.5 0 0 0 .06-.64l-.8-1.13c.2-.37.36-.76.48-1.16l1.36-.2A.5.5 0 0 0 19 13v-2a.5.5 0 0 0-.57-.56Z"/>
                 </svg>
-                <span className="text-xs font-bold text-gray-200">LinkedIn</span>
+                <span className="text-xs font-bold text-gray-200">Go Ahead</span>
               </div>
             </div>
             {/* Divider */}
             <hr className="border-gray-700 my-1" />
             {/* Panel options */}
-            <div className="grid grid-cols-2 gap-2 px-5 pb-3">
+            <div className="grid grid-cols-2 gap-2 px-5 py-3">
             {socialLinks.slice(0, 4).map((soc, idx) => (
                 <a
                 key={soc.name}
@@ -165,7 +169,7 @@ const formatDateTime = (dt) => {
                 </a>
             ))}
             <a
-                href="https://drive.google.com/file/d/1dDzxWzBXICV7jSd7_e8QK0Rmyy_KQyDC/view?usp=sharing"
+                href={resumeLink}
                 target='_blank'
                 rel='noopener noreferrer'
                 download

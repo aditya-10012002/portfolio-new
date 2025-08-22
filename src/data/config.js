@@ -33,6 +33,8 @@ export const socialIcons = {
     ),
 };
 
+export const resumeLink = "https://drive.google.com/file/d/1dDzxWzBXICV7jSd7_e8QK0Rmyy_KQyDC/view?usp=sharing";
+
 export const creativePlatforms = [
   { name: 'YouTube', url: 'https://youtube.com/@yourchannel' },
   { name: 'Medium',  url: 'https://medium.com/@yourusername' },
